@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.join-wrap {
+  width: 600px;
+  padding: 77px 100px;
+  border: 2px solid #00d975;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 50px;
+}
+
+.member-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.member-login p {
+  font-size: 30px;
+  padding: 0 2px;
+  font-weight: bold;
+}
+
+.input-wrap {
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  font-weight: 900;
+  color: black;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 19px;
+  position: relative;
+}
+
+.required {
+  font-size: 15px;
+  color: #ff5f5f;
+  display: inline-block;
+  vertical-align: 0px;
+}
+
+.phone-btn {
+  display: inline-block;
+  border: 1px solid #d4d4d4;
+  background-color: #f4f4f4;
+  border-radius: 25px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  margin-left: 6px;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.phone-btn:hover {
+  text-decoration: none;
+  color: black;
+  align-content: center;
+}
+
+.input-label-wrap {
+  margin-bottom: 12px;
+}
+
+.inline-setting {
+  display: inline-block;
+}
+
+.input-phone-wrap,
+.input-birth-wrap {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  height: 55px;
+  margin: 0;
+  border: 0;
+}
+
+.mobile1,
+.year {
+  width: 32%;
+  height: 55px;
+  border: 1px solid #9d9d9d;
+  padding: 0 30px 0 15px;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.mobile2,
+.mobile3,
+.month,
+.day {
+  width: 32%;
+  height: 55px;
+  background-color: white;
+  border: 1px solid #9d9d9d;
+  padding: 0 15px;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.input-email-wrap input[type=email],
+.input-name-wrap input[type=text],
+.input-id-wrap input[type=text],
+.input-password-wrap input[type=password] {
+  width: 100%;
+  height: 55px;
+  background-color: white;
+  border: 1px solid #9d9d9d;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #00d975;
+}
+
+.right-text {
+  float: right;
+  color: black;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.radio-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 30px;
+  vertical-align: middle;
+}
+
+.input-label-wrap input[type=radio] {
+  vertical-align: middle;
+}
+
+.input-text {
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin-top: 14px;
+}
+
+.input-account-wrap {
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 19px;
+  border: 0;
+}
+
+.input-account-wrap input[type=text] {
+  width: 100%;
+  height: 55px;
+  background-color: white;
+  border: 1px solid #9d9d9d;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+.input-account-wrap select {
+  width: 100%;
+  height: 55px;
+  background-color: white;
+  border: 1px solid #9d9d9d;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 10px;
+}
+
+.join-agree {
+  margin-top: 20px;
+}
+
+.check-agree-box {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.check-agree-box label {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.check-agree-box span {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+.base-check {
+  display: inline-block;
+  position: relative;
+  margin: 0 8px 0 0;
+  width: 22px;
+  height: 22px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  width: 22px;
+  height: 22px;
+  accent-color: white;
+}
+
+.join-button {
+  width: 100%;
+  display: block;
+  background: #00d975;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  line-height: 55px;
+  height: 55px;
+  border: 0;
+}
+
+.input-label-wrap input[type=radio] {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  cursor: pointer;
+  
+}
+
+.radio-center {
+  display: flex;
+  align-items: center;
+}

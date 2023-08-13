@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <!--css파일-->
+    <link rel="stylesheet" href="css/event.css">
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--제이쿼리-->
+    <script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+    <!--자바스크립트-->
+    <script type="text/javascript" src="js/event.js"></script>
+
+    <!--폰트어썸-->
+    <script src="https://kit.fontawesome.com/203ee98e0e.js" crossorigin="anonymous"></script>
+    <!--폰트: 스포카 한 산스 네오, 링크 추가 후 css에 폰트 패밀리 적용-->
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+</head>
+
+
+
+<body>
+
+    <!-- new header start -->
+    <header>
+        <div class="new-header-wrap">
+            <div class="new-top-wrap">
+                <div class="new-logo-wrap">
+                    <a href="main.html"><img src="images/background_none_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="new-search-wrap">
+                    <div>
+                        <form action="?">
+                            <div class="new-searchbar">
+                                <input type="search" name="keyword" autocomplete="off" placeholder="검색어를 입력하세요"
+                                    aria-label="검색">
+                                <button class="new-button" aria-label="검색">
+                                    <i id="icon" class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="new-buttons-wrap">
+                    <div class="join-img-wrap">
+                        <img src="images/말풍선.png" alt="" class="join-img" width="120px;" height="40px;"
+                            aria-label="회원가입" onclick="location.href='member_join.html'">
+                        <span class="join-img-label" onclick="location.href='member_join.html'">신규쿠폰 바로 지급!</span>
+                    </div>
+                    <a href="member_join.html" aria-label="회원가입">회원가입</a>
+                    <a href="login.html">로그인</a>
+                    <a href="Mypage.html">마이페이지</a>
+                    <a href="고객센터.html">고객센터</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-nav-wrap">
+            <div class="new-grid-row">
+                <div class="new-top-menu">
+                    <button class="new-category-button">
+                        <span>
+                            <i class="fa-solid fa-bars" style="margin-right: 10px;"></i>
+                            카테고리
+                        </span>
+                    </button>
+
+                    <ul>
+                        <li>
+                            <a href="packOne.html">1개담기</a>
+                        </li>
+                        <li>
+                            <a href="bestitems.html">베스트</a>
+                        </li>
+                        <li>
+                            <a href="subspage.html">정기구독</a>
+                        </li>
+                        <li>
+                            <a href="event.html">이벤트</a>
+                        </li>
+                        <li>
+                            <a href="상품후기게시판.html">후기</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="new-stickyCategory">
+                    <div class="new-sticky-box">
+                        <ul>
+                            <!-- 상세메뉴 href 일부러 연결안했습니다. -->
+                            <li>
+                                <a href="">상세메뉴1</a>
+                                <a href="">상세메뉴8</a>
+                                <a href="">상세메뉴9</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴2</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴3</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴4</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴5</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴6</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴7</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- new header end -->
+
+
+
+    <section>
+
+        <div class="eventGrid">
+
+            <div class="eventCard">
+                <div id="eventImg1" class="eventImg" onclick="location.href='eventDetail.html'">
+                    <img src="images/event1.jpg" alt="">
+                </div>
+                <div class="eventText">통살 혜택 여기서 확인!</div>
+            </div>
+
+            <div class="eventCard">
+                <div id="eventImg2" class="eventImg" onclick="location.href='eventDetail.html'">
+                    <img src="images/event2.jpg" alt="">
+                </div>
+                <div class="eventText">5월 신규 회원 모여라~</div>
+            </div>
+
+            <div class="eventCard">
+                <div id="eventImg3" class="eventImg" onclick="location.href='eventDetail.html'">
+                    <img src="images/event3.jpg" alt="">
+                </div>
+                <div class="eventText">신규 회원만을 위한 특별 혜택</div>
+            </div>
+
+            <div class="eventCard">
+                <div id="eventImg4" class="eventImg" onclick="location.href='eventDetail.html'">
+                    <img src="images/event4.jpg" alt="">
+                </div>
+                <div class="eventText">카톡 플친이세요? 선물 챙겨가세요!</div>
+            </div>
+
+            <input id="moreBtn" type="button" value="더보기">
+        </div>
+
+    </section>
+
+
+    <!-- new footer start -->
+    <footer class="new-footer-wrap">
+
+        <!-- footer 1번째 div -->
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-inner">
+                <div class="new-footer-gridLeft">
+                    <a href="">회사소개</a>
+                    <a href="" class="footer-sidebar">공지사항</a>
+                    <a href="" class="footer-sidebar">이용약관</a>
+                    <a href="" class="footer-sidebar">개인정보처리방침</a>
+                    <a href="" class="footer-sidebar">고객의견함</a>
+                    <a href="" class="footer-sidebar">인재채용</a>
+                </div>
+
+                <div class="new-footer-gridRight">
+                    <a href="">
+                        <img src="images/instagram.png" alt="" class="new-footer-img">
+                        <span class="footer-instagram">인스타그램</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/naverblog.png" alt="" class="new-footer-img">
+                        <span class="footer-naverblog">네이버 블로그</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/kakaochannel.png" alt="" class="new-footer-img">
+                        <span class="footer-kakao">카카오 채널</span></a>
+                    <a href="" class="footer-sidebar" style="padding-right: 0px;">
+                        <img src="images/youtube.png" alt="" class="new-footer-img">
+                        <span class="footer-youtube">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="new-footer-div-wrap">
+            <div class="new-footer-content-wrap">
+                <div>
+                    <h2 class="new-footer-h2">핑 퐁 한 끼</h2>
+                    <dl>
+                        <dt>멤버 </dt>
+                        <dd>: 김재환, 박예슬, 박진석, 주미, 최정욱</dd>
+                        <dt>주제 </dt>
+                        <dd>: 1인 가구를 위한 정식구독 서비스 웹페이지 제작</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>학원 이름 </dt>
+                        <dd>: KH정보교육원</dd>
+                        <dt>학원 주소 </dt>
+                        <dd>: 서울특별시 강남구 테헤란로 14길 6</dd>
+                    </dl>
+                    <p>사이트 내에는 핑퐁한끼에 입점한 개별판매자가 판매하는 상품이 포함되어 있습니다.
+                        <br>
+                        해당 상품의 경우 핑퐁한끼는 통신판매중개자로서 판매 당사자가 아니며, 상품정보 및 거래 등에 대한 책임을 지지 않습니다.
+                    </p>
+                    <p><strong>소비자피해보상보험</strong></p>
+                    <p>고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.</p>
+                </div>
+
+                <div>
+                    <h2 class="new-footer-h2">고객센터</h2>
+                    <p>업무시간 : 09:00 ~ 22:00 (공휴일 휴무)</p>
+                    <p>Email : abcde@gmail.com</p>
+
+                    <button class="footer-marketting-btn" onclick="location.href='MarketingAndSales.html'">마케팅 및
+                        영업문의</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="new-footer-div-wrap">
+                <div class="footer-copyright-wrap">
+                    <p>
+                        Copyright ©
+                        <strong>핑퐁한끼</strong>
+                        .All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+
+        </footer>
+        <!-- new footer end -->
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

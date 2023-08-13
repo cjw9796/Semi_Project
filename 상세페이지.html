@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--css파일-->
+    <link rel="stylesheet" href="css/new_header_footer.css">
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--제이쿼리-->
+    <script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+    <!--자바스크립트-->
+    <script type="text/javascript" src="js/new_header_footer.js"></script>
+
+    <!--폰트어썸-->
+    <script src="https://kit.fontawesome.com/203ee98e0e.js" crossorigin="anonymous"></script>
+    <!--폰트: 스포카 한 산스 네오, 링크 추가 후 css에 폰트 패밀리 적용-->
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+
+    <style>
+        .D-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 62.5%;
+            padding-top: 200px;
+        }
+
+        .D-t-1 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 570px;
+        }
+
+        .D-t-1-L {
+            width: 45%;
+
+        }
+
+        .D-t-1-R {
+            padding-top: 25px;
+            width: 50%;
+        }
+
+        .D-t-1-R-1 {
+            border-bottom: 1px solid #a3a3a3;
+            padding-bottom: 10px;
+        }
+
+        .D-t-1-R-1 img {
+            width: 42px;
+        }
+
+        .D-t-1-R-2 {
+            padding-top: 5px;
+        }
+
+        .D-t-1-R-2 span:first-child {
+            font-size: 35px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .D-t-1-R-2 span:nth-child(2) {
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .D-t-1-R-2 span:last-child {
+            font-size: 19px;
+            font-weight: bold;
+            color: #a3a3a3;
+            padding: 10px;
+            text-decoration:line-through ;  
+        }
+
+        .D-t-1-R-3 {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .D-t-1-R-3 span {
+            font-size: 12px;
+        }
+
+        .D-t-1-R-4 {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #00c728;
+        }
+
+        .D-t-1-R-4-1 label {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 10px 10px 0;
+        }
+
+        .D-t-1-R-4-1 label span {
+            font-size: 18px;
+        }
+
+        .D-t-1-R-4-1 label div:last-child {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .D-t-1-R-4-1 input {
+            display: none;
+        }
+
+        .D-t-1-R-4-1 label+div ul {
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .D-t-1-R-4-1 input:checked+label+div ul {
+            max-height: 100%;
+            padding: 0 20px;
+            border-top: none;
+        }
+
+        .D-t-1-R-4-2 ul {
+            list-style: none;
+            margin: 5px;
+        }
+
+        .D-t-1-R-4-2 li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .D-t-1-R-5 {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .D-t-1-R-5-1 {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .D-t-1-R-5-1 span:first-child {
+            color: #a3a3a3;
+            width: 15%;
+        }
+
+        .D-t-1-R-5-1 span:last-child {
+            width: 85%;
+            color: red;
+        }
+
+        .D-t-1-R-5-2 {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .D-t-1-R-5 span {
+            color: #a3a3a3;
+            width: 15%;
+        }
+
+        .D-t-1-R-5 select {
+            width: 85%;
+        }
+
+        .D-t-1-R-6 {
+            text-align: right;
+            padding: 15px 0;
+        }
+
+        .D-t-1-R-6 span:last-child {
+            font-size: 30px;
+        }
+
+        .D-t-1-R-7 {
+            display: flex;
+        }
+
+        .D-t-1-R-7 button {
+            border: none;
+            height: 59px;
+            margin: 0 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .D-t-1-R-7 button:nth-child(1) {
+            width: 25%;
+            color: #00c728;
+            background-color: #fff;
+            border: 1px solid #00c728;
+            border-radius: 10px;
+            margin-left: 0;
+        }
+
+        .D-t-1-R-7 button:nth-child(2) {
+            width: 37.5%;
+            color: #00c728;
+            background-color: #fff;
+            border: 1px solid #00c728;
+            border-radius: 10px;
+        }
+
+        .D-t-1-R-7 button:nth-child(3) {
+            width: 37.5%;
+            color: #fff;
+            background-color: #00c728;
+            border-radius: 10px;
+            margin-right: 0;
+        }
+
+       
+
+        .D-m-1 { 
+            display: flex;
+            justify-content: space-between;
+            padding: 75px 0 30px;
+        }
+
+        .D-m-1-L {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+        }
+
+        .D-m-1-L-L {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .D-m-1-L_R { 
+            margin: 20px;
+        }
+
+
+        .D-m-1-L img {
+            width: 80px;
+            height: 80px;   
+        }
+
+        .D-m-2 {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 30px;
+            margin-bottom: 80px;
+            margin-top: 70px;
+        }
+
+        .D-post-all {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+
+
+
+        .D-post {
+            padding: 10px 10px 10px 0;
+        }
+
+        .D-post-1 img {
+            width: 210px;
+            height: 220px;
+
+        } 
+
+        .D-post-2 {
+            display: flex;
+
+            justify-content: space-between;
+        }
+        
+        .D-post-2 img {
+            width: 24px;
+        }
+
+        .D-m-4 {
+            text-align: center;
+            padding-bottom: 100px;
+        }
+        
+        .D-m-4 img {
+            width: 1189px;
+        }
+
+        .D-m-3 {
+            display: flex;
+            justify-content: space-around;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .D-m-3 div {
+            width: 100%;
+            height: 50px;
+            padding-top: 5px;
+            text-align: center;
+            color: #a3a3a3;
+        }
+
+        .D-m-3 div:first-child {
+            color: #fff;
+            background-color: #00c728;
+            border: none;
+        }
+
+        .D-m-2 .D-post .D-post-1 :hover {
+            border: 2px solid #00c728;
+            filter: grayscale(40%);
+        }
+
+        .D-m-3 div:hover {
+            color: #fff;
+            background-color: #00c728;
+            border: none;
+        }
+
+        .D-post-4{
+            margin-right: 6px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #222;
+        }
+        
+        #off-percent {
+            font-weight: bold;
+            color: #ec493d;
+            font-size: 18px;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- new header start -->
+    <header class="new-footer-wrap">
+
+        <div class="new-header-wrap">
+            <div class="new-top-wrap">
+                <div class="new-logo-wrap">
+                    <a href="main.html"><img src="images/background_none_logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="new-search-wrap">
+                    <div>
+                        <form action="?">
+                            <div class="new-searchbar">
+                                <input type="search" name="keyword" autocomplete="off" placeholder="검색어를 입력하세요"
+                                    aria-label="검색">
+                                <button class="new-button" aria-label="검색">
+                                    <i id="icon" class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="new-buttons-wrap">
+                    <div class="join-img-wrap">
+                        <img src="images/말풍선.png" alt="" class="join-img" width="120px;" height="40px;"
+                            aria-label="회원가입" onclick="location.href='member_join.html'">
+                        <span class="join-img-label" onclick="location.href='member_join.html'">신규쿠폰 바로 지급!</span>
+                    </div>
+                    <a href="member_join.html" aria-label="회원가입">회원가입</a>
+                    <a href="login.html">로그인</a>
+                    <a href="Mypage.html">마이페이지</a>
+                    <a href="고객센터2.html">고객센터</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-nav-wrap">
+            <div class="new-grid-row">
+                <div class="new-top-menu">
+                    <button class="new-category-button">
+                        <span>
+                            <i class="fa-solid fa-bars" style="margin-right: 10px;
+              "></i>
+                            카테고리
+                        </span>
+                    </button>
+
+                    <ul>
+                        <li>
+                            <a href="packOne.html">1개담기</a>
+                        </li>
+
+                        <li>
+                            <a href="bestMenu.html">베스트</a>
+                        </li>
+
+                        <li>
+                            <a href="subspage.html">정기구독</a>
+                        </li>
+
+                        <li>
+                            <a href="event.html">이벤트</a>
+                        </li>
+                        <li>
+                            <a href="상품후기게시판.html">후기</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="new-stickyCategory">
+                    <div class="new-sticky-box">
+                        <ul>
+                            <li>
+                                <a href="">상세메뉴1</a>
+                                <a href="">상세메뉴8</a>
+                                <a href="">상세메뉴9</a>
+
+                            </li>
+
+                            <li>
+                                <a href="">상세메뉴2</a>
+                            </li>
+
+                            <li>
+                                <a href="">상세메뉴3</a>
+                            </li>
+
+                            <li>
+                                <a href="">상세메뉴4</a>
+                            </li>
+
+                            <li>
+                                <a href="">상세메뉴5</a>
+                            </li>
+
+                            <li>
+                                <a href="">상세메뉴6</a>
+                            </li>
+
+                            <li>
+                                <a href="">상세메뉴7</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- new header end -->
+
+    <div class="D-container">
+        <div class="D-t">
+            <div class="D-t-1">
+                <img class="D-t-1-L"
+                    src="https://metree.co.kr/index/_upload/goods/2021/one_bite_steam/p_one_bite_steam_3all.jpg" alt="">
+                <div class="D-t-1-R">
+                    <div class="D-t-1-R-1">
+                        <h2>한입 스팀 닭가슴살 모음</h2>
+                        <span>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            4.6 (441)
+                            <img src="https://metree.co.kr/_sys/_ext/template/pc_default/img/prd_icon01.svg" alt="">
+                        </span>
+                    </div>
+                    <div class="D-t-1-R-2">
+                        <span>24,900원</span>
+                        <span>33%</span>
+                        <span>36,900원</span>
+                    </div>
+                    <div class="D-t-1-R-3">
+                        <span>(1팩당 100g : 1,450원 ~ 1,660원)</span>
+                    </div>
+                    <div class="D-t-1-R-4">
+                        <div class="D-t-1-R-4-1">
+                            <input type="checkbox" id="D-point">
+                            <label for="D-point">
+                                <div>
+                                    <h4>핑퐁한끼 고객을 위한 알찬 혜택!</h4>
+                                </div>
+                                <div>
+                                    <span>최대적립금</span>
+                                    <span>749원(1 %)<i class="fa-solid fa-chevron-down"></i></span>
+                                </div>
+                            </label>
+                            <div class="D-t-1-R-4-2">
+                                <ul>
+                                    <li>
+                                        기본적립
+                                    </li>
+                                    <li>
+                                        <span>└기본적립</span>
+                                        <span>249원</span>
+                                    </li>
+                                    <li>
+                                        리뷰적립
+                                    </li>
+                                    <li>
+                                        <span>└일반리뷰</span>
+                                        <span>300원</span>
+                                    </li>
+                                    <li>
+                                        <span>└포토리뷰</span>
+                                        <span>500원</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="D-t-1-R-5">
+                        <div class="D-t-1-R-5-1">
+                            <span>배송비</span>
+                            <span>무료배송</span>
+                        </div>
+                        <div class="D-t-1-R-5-2">
+                            <span>옵션</span>
+                            <select>
+                                <option value="" disabled selected style="font-weight: bold
+                                    ;">옵션을 선택해주세요.</option>
+                                <option value="">
+                                    <span>1.저염 100g 15팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,660원)</span>
+                                        <span>24,900원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>2.콘스프맛 100g 15팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,660원)</span>
+                                        <span>24,900원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>3.갈릭 100g 15팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,660원)</span>
+                                        <span>24,900원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>4.혼합 100g 15팩 (각 5팩)</span>
+                                    <div>
+                                        <span>(1팩당 : 1,660원)</span>
+                                        <span>24,900원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>5.저염 100g 30팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,550원)</span>
+                                        <span>46,500원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>6.콘스프맛 100g 30팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,550원)</span>
+                                        <span>46,500원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>7.갈릭 100g 30팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,550원)</span>
+                                        <span>46,500원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>8.혼합 100g 30팩 (각 10팩)</span>
+                                    <div>
+                                        <span>(1팩당 : 1,550원)</span>
+                                        <span>46,500원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>9.저염 100g 50팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,500원)</span>
+                                        <span>75,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>10.콘스프맛 100g 50팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,500원)</span>
+                                        <span>75,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>11.갈릭 100g 50팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,500원)</span>
+                                        <span>75,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>12.혼합 100g 50팩 (저염16+콘스프맛17+갈릭17)</span>
+                                    <div>
+                                        <span>(1팩당 : 1,500원)</span>
+                                        <span>75,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>13.저염 100g 100팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,450원)</span>
+                                        <span>145,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>14.콘스프맛 100g 100팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,450원)</span>
+                                        <span>145,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>15.갈릭 100g 100팩</span>
+                                    <div>
+                                        <span>(1팩당 : 1,450원)</span>
+                                        <span>145,000원</span>
+                                    </div>
+                                </option>
+                                <option value="">
+                                    <span>16.혼합 100g 100팩(저염33+콘스프맛33+갈릭34)</span>
+                                    <div>
+                                        <span>(1팩당 : 1,450원)</span>
+                                        <span>145,000원</span>
+                                    </div>
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="D-t-1-R-6">
+                        <span>구매합계 : </span>
+                        <span>0원</span>
+                    </div>
+                    <div class="D-t-1-R-7">
+                        <button id="heart-button">♡</button>
+                        <button>장바구니</button>
+                        <button>바로구매</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="D-m">
+            <div class="D-m-1">
+                <div class="D-m-1-L">
+                    <div class="D-m-1-L-L">
+                        <span>BEST 리뷰</span>
+                        <div>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <span>|</span>
+                            <span>용용*****</span>
+                            <span>|</span>
+                            <span>2023-04-28</span>
+                        </div>
+                        <span>한입스팀닭가슴살모음</span>
+                        <span>트쌤 덕분에 알게되었는데 정말 열심히 먹고 운동하고 있어요 쭉 애용하겠습..</span>
+                    </div>
+                    <img class="D-m-1-L_R" src="https://metree.co.kr/index/_upload/review/2023/04/28/main_1_232901.jpeg" alt="">
+                </div>
+                <div class="D-m-1-L">
+                    <div class="D-m-1-L-L">
+                        <span>BEST 리뷰</span>
+                        <div>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <i class="fa-sharp fa-solid fa-star" style="color: #00c728;"></i>
+                            <span>|</span>
+                            <span>헬몽*****</span>
+                            <span>|</span>
+                            <span>2023-03-28</span>
+                        </div>
+                        <span>한입스팀닭가슴살모음</span>
+                        <span>베어먹지 않도 돼서 조아요~한입 크기에 부드럽습니다!</span>
+                    </div>
+                    <img class="D-m-1-L_R" src="https://metree.co.kr/index/_upload/review/2023/03/22/main_1_219716.jpeg" alt="">
+                </div>
+            </div>
+            <div class="D-m-2">
+                <span>함께하면 좋은 상품</span>
+                <div class="D-post-all">
+                    <div class="D-post" onclick="openModal(1)">
+                        <div class="D-post-1">
+                            <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                                alt="">
+                        </div>
+                        <div class="D-post-2">
+                            <img src="https://metree.co.kr/_sys/_ext/template/pc_default/img/prd_icon01.svg" alt="">
+                            <div>
+                            <i style="color: #00c728;" class="fa-sharp fa-solid fa-star"></i>
+                            <span>4.9 (619)</span>
+                            </div>
+                        </div>
+                        <div class="D-post-3">
+                            <span>맛있는 현미밥 2종 모음</span>
+                        </div>
+                        <div class="D-post-4">
+                            <span>21,900원</span>
+                        </div>
+                        <div class="D-post-5">
+                            <span id="off-percent">27%</span>
+                            <span style="text-decoration:line-through;  color: #777;">29,900</span>
+                        </div>
+                        <div class="D-post-6">
+                            <span>(1팩당 150g:913원)</span>
+                        </div>
+                    </div>
+                    <div class="D-post" onclick="openModal(1)">
+                        <div class="D-post-1">
+                            <img src="https://metree.co.kr/index/_upload/goods/2021/sauce_tender/p_sauce_tender_3allx300.jpg"
+                                alt="">
+                        </div>
+                        <div class="D-post-2">
+                            <img src="https://metree.co.kr/_sys/_ext/template/pc_default/img/prd_icon01.svg" alt="">
+                            <div>
+                            <i style="color: #00c728;" class="fa-sharp fa-solid fa-star"></i>
+                            <span>4.9 (619)</span>
+                            </div>
+                        </div>
+                        <div class="D-post-3">
+                            <span>맛있는 닭갈비 3종 모음</span>
+                        </div>
+                        <div class="D-post-4">
+                            <span>21,900원</span>
+                        </div>
+                        <div class="D-post-5">
+                            <span id="off-percent">27%</span>
+                            <span style="text-decoration:line-through; color: #777;">29,900</span>
+                        </div>
+                        <div class="D-post-6">
+                            <span>(1팩당 150g:913원)</span>
+                        </div>
+                    </div>
+                    <div class="D-post" onclick="openModal(1)">
+                        <div class="D-post-1">
+                            <img src="https://metree.co.kr/index/_upload/goods/2021/realsalad/p_realsalad_3allx300.jpg"
+                                alt="">
+                        </div>
+                        <div class="D-post-2">
+                            <img src="https://metree.co.kr/_sys/_ext/template/pc_default/img/prd_icon01.svg" alt="">
+                            <div>
+                            <i style="color: #00c728;" class="fa-sharp fa-solid fa-star"></i>
+                            <span>4.9 (619)</span>
+                            </div>
+                        </div>
+                        <div class="D-post-3">
+                            <span>리얼 샐러드</span>
+                        </div>
+                        <div class="D-post-4">
+                            <span>31,900원</span>
+                        </div>
+                        <div class="D-post-5">
+                            <span id="off-percent">27%</span>
+                            <span style="text-decoration:line-through; ; color: #777;">29,900</span>
+                        </div>
+                        <div class="D-post-6">
+                            <span>(1팩당 150g:913원)</span>
+                        </div>
+                    </div>
+                    <div class="D-post" onclick="openModal(1)">
+                        <div class="D-post-1">
+                            <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                                alt="">
+                        </div>
+                        <div class="D-post-2">
+                            <img src="https://metree.co.kr/_sys/_ext/template/pc_default/img/prd_icon01.svg" alt="">
+                            <div>
+                            <i style="color: #00c728;" class="fa-sharp fa-solid fa-star"></i>
+                            <span>4.9 (619)</span>
+                            </div>
+                        </div>
+                        <div class="D-post-3">
+                            <span>맛있는 현미밥 2종 모음</span>
+                        </div>
+                        <div class="D-post-4">
+                            <span>21,900원</span>
+                        </div>
+                        <div class="D-post-5">
+                            <span id="off-percent">27%</span>
+                            <span style="text-decoration:line-through; color: #777;">29,900</span>
+                        </div>
+                        <div class="D-post-6">
+                            <span>(1팩당 150g:913원)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="D-m-3">
+                <div>
+                    <span>상품(16)</span>
+                </div>
+                <div>
+                    <span>리뷰(441)</span>
+                </div>
+                <div>
+                    <span>Q&A</span>
+                </div>
+                <div>
+                    <span>배송/보관</span>
+                </div>
+            </div>
+            <div class="D-m-4">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/mark/flavor_guarantee_system.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/intro.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/common.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/low_salt.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/corn_soup_flavor.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/galic.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/info.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/metree/one_bite_steam/other.jpg" alt="">
+                <img src="https://gi.esmplus.com/jlfood1727/NOTICE/sasuham_lotte.jpg" alt="">
+                <img src="https://metree.co.kr/index/_upload/banner/2023/04/10/main_1_654.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- new footer start -->
+    <footer class="new-footer-wrap">
+
+        <!-- footer 1번째 div -->
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-inner">
+                <div class="new-footer-gridLeft">
+                    <a href="">회사소개</a>
+                    <a href="" class="footer-sidebar">공지사항</a>
+                    <a href="" class="footer-sidebar">이용약관</a>
+                    <a href="" class="footer-sidebar">개인정보처리방침</a>
+                    <a href="" class="footer-sidebar">고객의견함</a>
+                    <a href="" class="footer-sidebar">인재채용</a>
+                </div>
+
+                <div class="new-footer-gridRight">
+                    <a href="">
+                        <img src="images/instagram.png" alt="" class="new-footer-img">
+                        <span class="footer-instagram">인스타그램</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/naverblog.png" alt="" class="new-footer-img">
+                        <span class="footer-naverblog">네이버 블로그</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/kakaochannel.png" alt="" class="new-footer-img">
+                        <span class="footer-kakao">카카오 채널</span></a>
+                    <a href="" class="footer-sidebar" style="padding-right: 0px;">
+                        <img src="images/youtube.png" alt="" class="new-footer-img">
+                        <span class="footer-youtube">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-content-wrap">
+                <div>
+                    <h2 class="new-footer-h2">핑 퐁 한 끼</h2>
+                    <dl>
+                        <dt>멤버 </dt>
+                        <dd>: 김재환, 박예슬, 박진석, 주미, 최정욱</dd>
+                        <dt>주제 </dt>
+                        <dd>: 1인 가구를 위한 정식구독 서비스 웹페이지 제작</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>학원 이름 </dt>
+                        <dd>: KH정보교육원</dd>
+                        <dt>학원 주소 </dt>
+                        <dd>: 서울특별시 강남구 테헤란로 14길 6</dd>
+                    </dl>
+                    <p>사이트 내에는 핑퐁한끼에 입점한 개별판매자가 판매하는 상품이 포함되어 있습니다.
+                        <br>
+                        해당 상품의 경우 핑퐁한끼는 통신판매중개자로서 판매 당사자가 아니며, 상품정보 및 거래 등에 대한 책임을 지지 않습니다.
+                    </p>
+                    <p><strong>소비자피해보상보험</strong></p>
+                    <p>고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.</p>
+                </div>
+
+                <div>
+                    <h2 class="new-footer-h2">고객센터</h2>
+                    <p>업무시간 : 09:00 ~ 22:00 (공휴일 휴무)</p>
+                    <p>Email : abcde@gmail.com</p>
+
+                    <button class="footer-marketting-btn" onclick="location.href='MarketingAndSales.html'">마케팅 및
+                        영업문의</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-footer-div-wrap">
+            <div class="footer-copyright-wrap">
+                <p>
+                    Copyright ©
+                    <strong>핑퐁한끼</strong>
+                    .All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <!-- new footer end -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

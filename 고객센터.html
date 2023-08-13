@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--css파일-->
+    <link rel="stylesheet" href="css/new_header_footer.css">
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--제이쿼리-->
+    <script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+    <!--자바스크립트-->
+    <script type="text/javascript" src="js/new_header_footer.js"></script>
+
+    <!--폰트어썸-->
+    <script src="https://kit.fontawesome.com/203ee98e0e.js" crossorigin="anonymous"></script>
+    <!--폰트: 스포카 한 산스 네오, 링크 추가 후 css에 폰트 패밀리 적용-->
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/5b1091f816.js" crossorigin="anonymous"></script>
+
+    <style>
+        .C-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 62.5%;
+            padding-top: 350px;
+            padding-bottom: 100px;
+        }
+
+        .C-nav {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #96a0ad;
+            margin: 15px 0;
+            padding-bottom: 50px;
+        }
+
+        .C-nav-1 {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .C-nav-1 span {
+            color: #00c728;
+            font-size: 58px;
+            font-weight: bold;
+        }
+
+        .C-nav-2 {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            position: relative
+        }
+
+        .C-nav-2 .C-search-text {
+            width: 80%;
+            height: 64px;
+            border: 1px solid #96a0ad;
+            border-radius: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .C-search-text input {
+            width: 90%;
+            height: 24px;
+            margin: 0 30px;
+            font-size: 24px;
+            background-color: none;
+            border: none;
+        }
+
+        .C-search-text i {
+            position: relative;
+            left: 25px;
+            top: 0px;
+            color: #96a0ad;
+            font-size: 24px
+        }
+
+        .C-nav-3 {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+
+        }
+
+        .C-nav-3 .C-nav-btn1,
+        .C-nav-3 .C-nav-btn2 {
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+            margin: 15px;
+        }
+
+        .C-nav-3 .C-nav-btn.C-activ {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00c728;
+            color: #ffffff;
+            border-radius: 23px;
+            height: 46px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+        }
+
+        .C-nav-3 .C-nav-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #96a0ad;
+            border-radius: 23px;
+            height: 46px;
+            font-size: 20px;
+            color: #96a0ad;
+            font-weight: 500;
+        }
+
+        .C-nav-btn:hover {
+            background-color: #00c728;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .C-nav-3 .C-nav-btn span {
+            padding: 0 30px;
+        }
+
+        .C-post .C-post-icon {
+            width: 10%;
+            text-align: center;
+            color: #00c728;
+        }
+
+        .C-page {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
+
+        .C-page .C-pagination {
+            list-style: none;
+        }
+
+        .C-pagination {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+        }
+
+        .C-pagination a {
+            text-decoration: none;
+            color: #96a0ad;
+            height: 28px;
+            width: 28px;
+        }
+
+        .first:hover,
+        .last:hover,
+        .left:hover,
+        .right:hover {
+            color: #00c728;
+        }
+
+        .C-pagination a.active {
+            cursor: default;
+            color: #ffffff;
+        }
+
+        .C-pagination a:active {
+            outline: none;
+        }
+
+        .C-modal .num {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .C-modal .num:hover {
+            background-color: #00c728;
+            color: #ffffff;
+        }
+
+        .C-modal .num.active,
+        .C-modal .num:active {
+            background-color: #00c728;
+            cursor: pointer;
+        }
+
+        .C-nav2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 90px;
+            margin-bottom: 80px;
+        }
+
+        input[id*="C-answer"] {
+            display: none;
+        }
+
+        input[id*="C-answer"]+label {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2.5%;
+            justify-content: space-between;
+            border-bottom: 1px solid #96a0ad;
+            font-size: 22px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        input[id*="C-answer"]+label :nth-child(1) {
+            color: #00c728;
+            width: 15%;
+        }
+
+        input[id*="C-answer"]+label :nth-child(2) {
+            width: 60%;
+        }
+
+        input[id*="C-answer"]+label i {
+            color: #00c728;
+            width: 5%;
+
+        }
+
+        input[id*="C-answer"]+label+div {
+            width: 90%;
+            margin: 0 auto;
+            max-height: 0;
+            overflow: hidden;
+            background-color: #e7ffec;
+            transition: all 0.35s;
+        }
+
+        input[id*="C-answer"]+label+div p {
+            padding: 20px;
+            margin: 0;
+        }
+
+        input[id*="C-answer"]:checked+label+div {
+            max-height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- new header start -->
+    <header>
+        <div class="new-header-wrap">
+            <div class="new-top-wrap">
+                <div class="new-logo-wrap">
+                    <a href="main.html"><img src="images/background_none_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="new-search-wrap">
+                    <div>
+                        <form action="?">
+                            <div class="new-searchbar">
+                                <input type="search" name="keyword" autocomplete="off" placeholder="검색어를 입력하세요"
+                                    aria-label="검색">
+                                <button class="new-button" aria-label="검색">
+                                    <i id="icon" class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="new-buttons-wrap">
+                    <div class="join-img-wrap">
+                        <img src="images/말풍선.png" alt="" class="join-img" width="120px;" height="40px;"
+                            aria-label="회원가입" onclick="location.href='member_join.html'">
+                        <span class="join-img-label" onclick="location.href='member_join.html'">신규쿠폰 바로 지급!</span>
+                    </div>
+                    <a href="member_join.html" aria-label="회원가입">회원가입</a>
+                    <a href="login.html">로그인</a>
+                    <a href="Mypage.html">마이페이지</a>
+                    <a href="고객센터.html">고객센터</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-nav-wrap">
+            <div class="new-grid-row">
+                <div class="new-top-menu">
+                    <button class="new-category-button">
+                        <span>
+                            <i class="fa-solid fa-bars" style="margin-right: 10px;"></i>
+                            카테고리
+                        </span>
+                    </button>
+
+                    <ul>
+                        <li>
+                            <a href="packOne.html">1개담기</a>
+                        </li>
+                        <li>
+                            <a href="bestitems.html">베스트</a>
+                        </li>
+                        <li>
+                            <a href="subspage.html">정기구독</a>
+                        </li>
+                        <li>
+                            <a href="event.html">이벤트</a>
+                        </li>
+                        <li>
+                            <a href="상품후기게시판.html">후기</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="new-stickyCategory">
+                    <div class="new-sticky-box">
+                        <ul>
+                            <!-- 상세메뉴 href 일부러 연결안했습니다. -->
+                            <li>
+                                <a href="">상세메뉴1</a>
+                                <a href="">상세메뉴8</a>
+                                <a href="">상세메뉴9</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴2</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴3</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴4</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴5</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴6</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴7</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- new header end -->
+
+    <div class="C-container">
+        <div class="C-nav">
+            <div class="C-nav-1">
+                <span>고객센터</span>
+            </div>
+            <div class="C-nav-2">
+                <div class="C-search-text">
+                    <i id="icon" class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="키워드를 검색해보세요!" onkeyup="searchE(event)">
+                </div>
+            </div>
+            <div class="C-nav-3">
+                <div class="C-nav-btn1">
+                    <div class="C-nav-btn C-activ" onclick="searchC(event)">
+                        <span>전체</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>가입 및 정보</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>등급 혜택</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>구독 신청</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>구독 변경</span>
+                    </div>
+                </div>
+                <div class="C-nav-btn2">
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>구독 취소</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>상품 및 메뉴</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>배송</span>
+                    </div>
+                    <div class="C-nav-btn" onclick="searchC(event)">
+                        <span>기타</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="C-post-all">
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer01">
+                <label for="C-answer01">
+                    <span class="C-type">가입 및 정보</span>
+                    <span class="C-post-title">회원가입은 어떻게 하나요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        회원가입은 SNS 계정(카카오톡/네이버)을 선택해 가입하시면 됩니다.
+                        <br>
+                        * PC : 홈페이지 우측 상단 '회원가입' 버튼
+                        * MOBILE : 홈페이지 로그인 > 우측 상단 버튼
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer02">
+                <label for="C-answer02">
+                    <span class="C-type">가입 및 정보</span>
+                    <span class="C-post-title">추천인 포인트는 무엇인가요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        회원가입 시 위잇딜라이트를 추천해 주신 고객님의 추천인코드를 입력하면 두 고객님 모두 3,000포인트를 적립해드립니다.
+                        <br>
+                        [추천인코드 확인 방법]
+                        * PC : 홈페이지 로그인 > 우측 상단 닉네임 클릭 > 추천인코드 공유하기
+                        * MOBILE : 홈페이지 로그인 > 우측 상단 버튼 > 오른쪽 상단 추천인코드 복사
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer03">
+                <label for="C-answer03">
+                    <span class="C-type">가입 및 정보</span>
+                    <span class="C-post-title">회원정보는 어떻게 변경하나요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        마이페이지 내에서 정보 변경이 가능합니다.
+                        단, 필수 정보(연락처, 생년월일)는 변경이 불가하오나 연락처가 바뀌어 변경을 원하시는 경우 홈페이지 우측 하단 문의하기를 통해 문의 부탁 드립니다.
+                        <br>
+                        * PC : 홈페이지 로그인 > 우측 상단 닉네임 클릭 > 내 정보 관리
+                        * MOBILE : 홈페이지 로그인 > 우측 상단 버튼 > 내 정보 관리
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer04">
+                <label for="C-answer04">
+                    <span class="C-type">가입 및 정보</span>
+                    <span class="C-post-title">회원탈퇴는 어떻게 하나요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        마이페이지 내에서 회원탈퇴가 가능합니다.
+                        단, 이용 중인 구독 건이 있는 경우 탈퇴가 불가능하므로 구독 종료일 이후 또는 남은 구독 건을 모두 취소하신 후 탈퇴하시면 됩니다.
+                        <br>
+                        ※ 회원탈퇴 시 보유 중인 적립금과 쿠폰은 소멸되며 재가입해도 복구되지 않습니다.
+                        <br>
+                        * PC : 홈페이지 로그인 > 우측 상단 닉네임 클릭 > 내 정보 관리 > 회원탈퇴
+                        * MOBILE : 홈페이지 로그인 > 우측 상단 버튼 > 내 정보 관리 > 회원탈퇴
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer05">
+                <label for="C-answer05">
+                    <span class="C-type">가입 및 정보</span>
+                    <span class="C-post-title">연락처가 바뀌었는데 어떻게 변경하나요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>연락처는 필수 정보로 직접 변경이 불가합니다. 연락처 변경을 원하시는 경우 홈페이지 우측 하단 문의하기를 통해 문의 부탁 드립니다.
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer06">
+                <label for="C-answer06">
+                    <span class="C-type">가입 및 정보</span>
+                    <span class="C-post-title">처음에 가입한 소셜 계정을 바꿀 수 있나요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        회원가입이 완료된 이후 다른 소셜 계정으로 변경이 불가합니다.
+                        계정 변경이 꼭 필요한 경우 현재 이용 중인 구독 신청 건을 모두 취소하신 후 회원 탈퇴 및 재가입을 통해 변경하실 수 있습니다.
+                        만약 SNS 계정 삭제 등의 이유로 로그인이 불가능한 경우, 고객센터로 문의하시면 안내받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer07">
+                <label for="C-answer07">
+                    <span class="C-type">등급 혜택</span>
+                    <span class="C-post-title">등급 혜택이란 무엇인가요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        ‘등급 혜택’이란, 고객님께서 최근 3개월 동안 구독하신 개수에 따라 다음 달 1일에 회원 등급을 결정하며, 구독을 완료할 때마다 포인트로 돌려드리는 위잇딜라이트의 회원
+                        제도를 말합니다.
+                    </p>
+                </div>
+            </div>
+            <div class="C-post">
+                <input type="radio" name="C-post" id="C-answer08">
+                <label for="C-answer08">
+                    <span class="C-type">등급 혜택</span>
+                    <span class="C-post-title">등급은 어떻게 확인할 수 있나요?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div>
+                    <p>
+                        마이페이지 내에서 등급 확인이 가능합니다.
+                        * PC : 홈페이지 로그인 > 우측 상단 닉네임 클릭
+                        * MOBILE : 홈페이지 로그인 > 우측 상단버튼
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="C-nav2">
+            <div class="C-page">
+                <ul class="C-pagination C-modal">
+                    <li><a href="#" class="first">첫 페이지</a></li>
+                    <li><a href="#" class="arrow left">
+                            <이전</a>
+                    </li>
+                    <li><a href="#" class="active num">1</a></li>
+                    <li><a href="#" class="num">2</a></li>
+                    <li><a href="#" class="num">3</a></li>
+                    <li><a href="#" class="num">4</a></li>
+                    <li><a href="#" class="num">5</a></li>
+                    <li><a href="#" class="num">6</a></li>
+                    <li><a href="#" class="num">7</a></li>
+                    <li><a href="#" class="num">8</a></li>
+                    <li><a href="#" class="num">9</a></li>
+                    <li><a href="#" class="num">10</a></li>
+                    <li><a href="#" class="arrow right">다음></a></li>
+                    <li><a href="#" class="last">끝 페이지</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- new footer start -->
+    <footer class="new-footer-wrap">
+
+        <!-- footer 1번째 div -->
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-inner">
+                <div class="new-footer-gridLeft">
+                    <a href="">회사소개</a>
+                    <a href="" class="footer-sidebar">공지사항</a>
+                    <a href="" class="footer-sidebar">이용약관</a>
+                    <a href="" class="footer-sidebar">개인정보처리방침</a>
+                    <a href="" class="footer-sidebar">고객의견함</a>
+                    <a href="" class="footer-sidebar">인재채용</a>
+                </div>
+
+                <div class="new-footer-gridRight">
+                    <a href="">
+                        <img src="images/instagram.png" alt="" class="new-footer-img">
+                        <span class="footer-instagram">인스타그램</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/naverblog.png" alt="" class="new-footer-img">
+                        <span class="footer-naverblog">네이버 블로그</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/kakaochannel.png" alt="" class="new-footer-img">
+                        <span class="footer-kakao">카카오 채널</span></a>
+                    <a href="" class="footer-sidebar" style="padding-right: 0px;">
+                        <img src="images/youtube.png" alt="" class="new-footer-img">
+                        <span class="footer-youtube">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-content-wrap">
+                <div>
+                    <h2 class="new-footer-h2">핑 퐁 한 끼</h2>
+                    <dl>
+                        <dt>멤버 </dt>
+                        <dd>: 김재환, 박예슬, 박진석, 주미, 최정욱</dd>
+                        <dt>주제 </dt>
+                        <dd>: 1인 가구를 위한 정식구독 서비스 웹페이지 제작</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>학원 이름 </dt>
+                        <dd>: KH정보교육원</dd>
+                        <dt>학원 주소 </dt>
+                        <dd>: 서울특별시 강남구 테헤란로 14길 6</dd>
+                    </dl>
+                    <p>사이트 내에는 핑퐁한끼에 입점한 개별판매자가 판매하는 상품이 포함되어 있습니다.
+                        <br>
+                        해당 상품의 경우 핑퐁한끼는 통신판매중개자로서 판매 당사자가 아니며, 상품정보 및 거래 등에 대한 책임을 지지 않습니다.
+                    </p>
+                    <p><strong>소비자피해보상보험</strong></p>
+                    <p>고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.</p>
+                </div>
+
+                <div>
+                    <h2 class="new-footer-h2">고객센터</h2>
+                    <p>업무시간 : 09:00 ~ 22:00 (공휴일 휴무)</p>
+                    <p>Email : abcde@gmail.com</p>
+
+                    <button class="footer-marketting-btn" onclick="location.href='MarketingAndSales.html'">마케팅 및
+                        영업문의</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-footer-div-wrap">
+            <div class="footer-copyright-wrap">
+                <p>
+                    Copyright ©
+                    <strong>핑퐁한끼</strong>
+                    .All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <!-- new footer end -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function searchE(event) {
+            // 엔터 키의 keyCode 확인
+            var enterKeyCode = 13;
+
+            // 엔터 키가 눌렸을 때 또는 아이콘 클릭 시 함수 실행
+            if (event.keyCode === enterKeyCode || event.type === 'click') {
+                // 입력된 검색어 가져오기
+                var searchText = document.querySelector('.C-search-text input').value.toLowerCase();
+
+                // 모든 FAQ 항목 가져오기
+                var faqItems = document.querySelectorAll('.C-post-all .C-post');
+
+
+                // 각 FAQ 항목을 순회하며 검색어와 일치하는 항목만 보이도록 처리
+                faqItems.forEach(function (item) {
+                    var mainText = item.querySelector('.C-post-title').textContent.toLowerCase();
+                    var display = mainText.includes(searchText) ? 'block' : 'none';
+                    console.log(item);
+                    item.style.display = display;
+                });
+            }
+        }
+
+        // 버튼 요소들을 가져옵니다.
+        const buttons = document.querySelectorAll('.C-nav-btn');
+
+        // 각 버튼의 이름을 출력하고 클릭 이벤트 핸들러를 추가합니다.
+        buttons.forEach((button, index) => {
+            const buttonText = button.querySelector('span').innerText;
+            console.log(`버튼 ${index + 1}: ${buttonText}`);
+            button.addEventListener('click', handleButtonClick);
+        });
+
+        function searchC(event) {
+            // 클릭된 버튼의 텍스트 가져오기
+            const btnText = event.currentTarget.querySelector('span').innerText;
+
+            // 모든 FAQ 항목 가져오기
+            const faqItems = document.querySelectorAll('.C-post-all .C-post');
+            // 전체 버튼일 경우 모든 FAQ 항목 보이도록 처리
+            if (btnText === '전체') {
+                faqItems.forEach(function (item) {
+                    item.style.display = 'block';
+                });
+            } else {
+                // 각 FAQ 항목을 순회하며 검색어와 일치하는 항목만 보이도록 처리
+                faqItems.forEach(function (item) {
+                    const mainText = item.querySelector('.C-type').textContent;
+                    const display = mainText.includes(btnText) ? 'block' : 'none';
+                    item.style.display = display;
+                });
+            }
+
+            // 현재 C-activ 클래스가 설정된 버튼에서 C-activ 클래스 제거
+            const activeButton = document.querySelector('.C-nav-btn.C-activ');
+            if (activeButton) {
+                activeButton.classList.remove('C-activ');
+            }
+
+            // 클릭된 버튼에 C-activ 클래스 추가
+            event.currentTarget.classList.add('C-activ');
+        }
+    </script>
+
+</body>
+
+</html>

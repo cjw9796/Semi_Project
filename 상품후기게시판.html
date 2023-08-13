@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--css파일-->
+    <link rel="stylesheet" href="css/new_header_footer.css">
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--제이쿼리-->
+    <script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+    <!--자바스크립트-->
+    <script type="text/javascript" src="js/new_header_footer.js"></script>
+
+    <!--폰트어썸-->
+    <script src="https://kit.fontawesome.com/203ee98e0e.js" crossorigin="anonymous"></script>
+    <!--폰트: 스포카 한 산스 네오, 링크 추가 후 css에 폰트 패밀리 적용-->
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+
+    <style>
+        .P-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 62.5%;
+            padding-top: 250px;
+            padding-bottom: 100px;
+        }
+
+        .P-nav {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #96a0ad;
+            margin: 15px 0;
+            padding-bottom: 50px;
+        }
+
+        .P-nav-1 {
+            display: flex;
+            justify-content: end;
+        }
+
+        .P-nav-1 button {
+            width: 152px;
+            height: 64px;
+            font-size: 24px;
+            border: none;
+            background-color: #00c728;
+            color: #ffffff;
+        }
+
+        .P-nav-2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .P-nav-2 span {
+            color: #00c728;
+            font-size: 58px;
+            font-weight: bold;
+        }
+
+        .P-post-all {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-top: 15px;
+        }
+
+        .P-post {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+
+        .P-post .P-post-img img {
+            width: 240px;
+            height: 240px;
+        }
+
+        .P-post .P-post-star {
+            color: #00c728;
+        }
+
+        .P-post .P-post-date {
+            font-size: 80%;
+        }
+
+        .P-post .P-post-hits {
+            font-size: 75%;
+        }
+
+        .P-page {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
+
+        .P-page .P-pagination {
+            list-style: none;
+        }
+
+        .P-pagination {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+        }
+
+        .P-pagination a {
+            text-decoration: none;
+            color: #96a0ad;
+            height: 28px;
+            width: 28px;
+        }
+
+        .first:hover,
+        .last:hover,
+        .left:hover,
+        .right:hover {
+            color: #00c728;
+        }
+
+        .P-pagination a.active {
+            cursor: default;
+            color: #ffffff;
+        }
+
+        .P-pagination a:active {
+            outline: none;
+        }
+
+        .P-modal .num {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .P-modal .num:hover {
+            background-color: #00c728;
+            color: #ffffff;
+        }
+
+        .P-modal .num.active,
+        .P-modal .num:active {
+            background-color: #00c728;
+            cursor: pointer;
+        }
+
+        .P-search {
+            display: flex;
+            justify-content: center;
+            column-gap: 5px;
+            padding-bottom: 30px;
+        }
+
+        .P-search-sel select {
+            width: 80px;
+            height: 28px;
+            border: 1px solid #96a0ad;
+            color: #96a0ad;
+        }
+
+        .P-search-text input {
+            width: 232px;
+            height: 26px;
+            border: 1px solid #96a0ad;
+        }
+
+        .P-search-btn input {
+            width: 50px;
+            height: 28px;
+            color: #ffffff;
+            border: none;
+            background-color: #00c728;
+        }
+
+        .P-nav2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 90px;
+            margin-bottom: 80px;
+        }
+
+        .P-post .P-post-img :hover {
+            border: 2px solid #00c728;
+            filter: grayscale(40%);
+        }
+
+        .Pop-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            width: 105%;
+            height: 120%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            padding-right: 100px;
+        }
+
+        .Pop-modal-content {
+            background-color: #fefefe;
+            width: 600px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .Pop-modal-content-top {
+            display: flex;
+            width: 450px;
+        }
+
+        .Pop-modal-content-top-inner {
+            padding-left: 15px;
+        }
+
+        .Pop-modal-content-top i {
+            color: #00c728;
+        }
+
+        .Pop-modal-content-top img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid #00c728;
+        }
+
+        .Pop-modal-content-mid img {
+            width: 450px;
+            height: 450px;
+            padding: 10px 0 5px;
+        }
+
+        .Pop-modal-content-btm-inner1 i {
+            color: #00c728;
+        }
+
+        .Pop-modal-content-btm-inner1 span {
+            font-weight: bold;
+        }
+
+        .Pop-modal-content-btm-inner2 {
+            width: 360px;
+            border: 1px solid #96a0ad;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .Pop-modal-content-btm-inner4 {
+            width: 450px;
+            font-size: 90%;
+            color: #96a0ad;
+            margin: 10px 0;
+        }
+
+        .Pop-modal-buttons {
+            /* background-color: #fefefe; */
+            border: 0px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .Pop-modal button {
+            font-size: 14pt;
+            width: 130px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border: 0px;
+        }
+
+        .Pop-modal button:first-child {
+            background-color: #00c728;
+            color: white;
+            border-radius: 24px;
+        }
+
+        .Pop-modal button:last-child {
+            background-color: white;
+            color: #96a0ad;
+            border: 1px solid #96a0ad;
+            border-radius: 24px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- new header start -->
+    <header>
+        <div class="new-header-wrap">
+            <div class="new-top-wrap">
+                <div class="new-logo-wrap">
+                    <a href="main.html"><img src="images/background_none_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="new-search-wrap">
+                    <div>
+                        <form action="?">
+                            <div class="new-searchbar">
+                                <input type="search" name="keyword" autocomplete="off" placeholder="검색어를 입력하세요"
+                                    aria-label="검색">
+                                <button class="new-button" aria-label="검색">
+                                    <i id="icon" class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="new-buttons-wrap">
+                    <div class="join-img-wrap">
+                        <img src="images/말풍선.png" alt="" class="join-img" width="120px;" height="40px;"
+                            aria-label="회원가입" onclick="location.href='member_join.html'">
+                        <span class="join-img-label" onclick="location.href='member_join.html'">신규쿠폰 바로 지급!</span>
+                    </div>
+                    <a href="member_join.html" aria-label="회원가입">회원가입</a>
+                    <a href="login.html">로그인</a>
+                    <a href="Mypage.html">마이페이지</a>
+                    <a href="고객센터.html">고객센터</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-nav-wrap">
+            <div class="new-grid-row">
+                <div class="new-top-menu">
+                    <button class="new-category-button">
+                        <span>
+                            <i class="fa-solid fa-bars" style="margin-right: 10px;"></i>
+                            카테고리
+                        </span>
+                    </button>
+
+                    <ul>
+                        <li>
+                            <a href="packOne.html">1개담기</a>
+                        </li>
+                        <li>
+                            <a href="bestitems.html">베스트</a>
+                        </li>
+                        <li>
+                            <a href="subspage.html">정기구독</a>
+                        </li>
+                        <li>
+                            <a href="event.html">이벤트</a>
+                        </li>
+                        <li>
+                            <a href="상품후기게시판.html">후기</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="new-stickyCategory">
+                    <div class="new-sticky-box">
+                        <ul>
+                            <!-- 상세메뉴 href 일부러 연결안했습니다. -->
+                            <li>
+                                <a href="">상세메뉴1</a>
+                                <a href="">상세메뉴8</a>
+                                <a href="">상세메뉴9</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴2</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴3</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴4</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴5</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴6</a>
+                            </li>
+                            <li>
+                                <a href="">상세메뉴7</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- new header end -->
+
+    <div id="Pop-modal1" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                    alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 현미밥 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://blog.kakaocdn.net/dn/LcQ3j/btqZUWR9lhL/mIdnIyltiXqPchiHCQ3dfk/img.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>너무맛있어요 완전 기절할뻔ㅠ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>김기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>삼삼하니 계속 들어가요ㅠㅠ 재주문 필수일듯합니다!!</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <div id="Pop-modal2" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/frankhotbar/p_frankhotbar_5allx300.jpg" alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 닭가슴살 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://metree.co.kr/index/_upload/review/2023/05/12/main_1_237472x500.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>싸고 맛있어용 운동 가기 전에 먹고 가곤 해요 ㅋㅋ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>유기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>싸고 맛있어용 운동 가기 전에 먹고 가곤 해요 ㅋㅋ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <div id="Pop-modal3" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/steak/p_steak_6allx300.jpg" alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 닭가슴살스테이크 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://metree.co.kr/index/_upload/review/2023/05/12/main_1_237472x500.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>오독오독 맛있습니다</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>김기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>너무 맘에 드는 구성이라 꾸준하게 잘 먹고 있습니다 아몬드 호두 캐슈넛 브러질너트 피칸 건강한맛 그대로 좋네요 100개박스 아주
+                        좋네요</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <div id="Pop-modal2" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                    alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 현미밥 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://metree.co.kr/index/_upload/review/2023/05/12/main_1_237472x500.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>너무맛있어요 완전 기절할뻔ㅠ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>김기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>삼삼하니 계속 들어가요ㅠㅠ 재주문 필수일듯합니다!!</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <div id="Pop-modal2" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                    alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 현미밥 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://metree.co.kr/index/_upload/review/2023/05/12/main_1_237472x500.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>너무맛있어요 완전 기절할뻔ㅠ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>김기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>삼삼하니 계속 들어가요ㅠㅠ 재주문 필수일듯합니다!!</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <div id="Pop-modal2" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                    alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 현미밥 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://metree.co.kr/index/_upload/review/2023/05/12/main_1_237472x500.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>너무맛있어요 완전 기절할뻔ㅠ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>김기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>삼삼하니 계속 들어가요ㅠㅠ 재주문 필수일듯합니다!!</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <div id="Pop-modal2" class="Pop-modal">
+        <div class="Pop-modal-content">
+            <div class="Pop-modal-content-top">
+                <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                    alt="">
+                <div class="Pop-modal-content-top-inner">
+                    <span>[특별 이벤트] 국민 현미밥 20팩+20팩 (총 40팩)</span>
+                    <div class="Pop-modal-content-top-inner2">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <span>4.9 리뷰 365</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Pop-modal-content-mid">
+                <img src="https://metree.co.kr/index/_upload/review/2023/05/12/main_1_237472x500.jpg" alt="">
+            </div>
+            <div class="Pop-modal-content-btm">
+                <div class="Pop-modal-content-btm-inner1">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>너무맛있어요 완전 기절할뻔ㅠ</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner2">
+                    <span>김기*님의 리뷰입니다.</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner3">
+                    <span>네이버페이에서 작성된 후기입니다.<br>삼삼하니 계속 들어가요ㅠㅠ 재주문 필수일듯합니다!!</span>
+                </div>
+                <div class="Pop-modal-content-btm-inner4">
+                    <span>도움돼요</span>
+                    <span>도움안돼요</span>
+                </div>
+            </div>
+            <div class="Pop-modal-buttons">
+                <button onclick="closeModal(true)">리뷰쓰기</button>
+                <button onclick="closeModal(false)">돌아가기</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let modalElements = document.querySelectorAll('[id*="Pop-modal"]');
+
+        function openModal(index) {
+            modalElements[index - 1].style.display = "flex";
+        }
+
+        function closeModal(index, result) {
+            modalElements[index - 1].style.display = "none";
+
+            if (result) {
+                window.open('../상품후기게시판.html', '_self');
+            }
+        }
+
+        function closeModal(result) {
+            for (let i = 0; i < modalElements.length; i++) {
+                modalElements[i].style.display = "none";
+            }
+
+            if (result) {
+                window.open('../상품후기게시판.html', '_self');
+            }
+        }
+    </script>
+
+
+
+    <div class="P-container">
+
+        <div class="P-nav">
+            <div class="P-nav-1">
+                <button>글쓰기</button>
+            </div>
+            <div class="P-nav-2">
+                <span>상품후기</span>
+            </div>
+        </div>
+        <div class="P-post-all">
+            <div class="P-post" onclick="openModal(1)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                        alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>너무맛있어요 완전 기절할뻔 ㅠ</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 0</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(2)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/frankhotbar/p_frankhotbar_5allx300.jpg"
+                        alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>싸고 맛있어용 운동 가기 전에 먹고</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 0</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(3)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/steak/p_steak_6allx300.jpg" alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>한번먹을때 5번 돌려먹어요ㅋㅋ
+                    </span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 10</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(4)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/harunuts/p_harunuts_2allx300.jpg" alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>간편하니 강추입니다!</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 0</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(5)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/softsteam/p_softsteam_2allx300.jpg" alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>먹어본것중에 제일안물리니 맛있는듯</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 25</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(6)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/instantrice_brown_white/p_instantrice_brown_whitex300.jpg"
+                        alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>회사 점심때 먹으려고 들고다녀용ㅎ</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 0</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(7)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/one_bite_steam/p_one_bite_steam_3allx300.jpg"
+                        alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>술안주로도 간단하니 최고~~!!</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 1</span>
+                </div>
+            </div>
+            <div class="P-post" onclick="openModal(8)">
+                <div class="P-post-img">
+                    <img src="https://metree.co.kr/index/_upload/goods/2021/oatmealchicken/p_oatmealchicken_3allx300.jpg"
+                        alt="">
+                </div>
+                <div class="P-post-star">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="P-post-text">
+                    <span>그냥 시중치킨 눅눅한 버전 존맛!</span>
+                </div>
+                <div class="P-post-date">
+                    <span>2023-05-18</span>
+                </div>
+                <div class="P-post-hits">
+                    <span>조회 2</span>
+                </div>
+            </div>
+        </div>
+        <div class="P-nav2">
+            <div class="P-page">
+                <ul class="P-pagination P-modal">
+                    <li><a href="#" class="first">첫 페이지</a></li>
+                    <li><a href="#" class="arrow left">
+                            &lt;이전 </a>
+                    </li>
+                    <li><a href="#" class="active num">1</a></li>
+                    <li><a href="#" class="num">2</a></li>
+                    <li><a href="#" class="num">3</a></li>
+                    <li><a href="#" class="num">4</a></li>
+                    <li><a href="#" class="num">5</a></li>
+                    <li><a href="#" class="num">6</a></li>
+                    <li><a href="#" class="num">7</a></li>
+                    <li><a href="#" class="num">8</a></li>
+                    <li><a href="#" class="num">9</a></li>
+                    <li><a href="#" class="num">10</a></li>
+                    <li><a href="#" class="arrow right">다음></a></li>
+                    <li><a href="#" class="last">끝 페이지</a></li>
+                </ul>
+            </div>
+            <div class="P-search">
+                <div class="P-search-sel">
+                    <select name="" id="">
+                        <option value="제목">제목</option>
+                        <option value="내용">내용</option>
+                        <option value="작성자">작성자</option>
+                    </select>
+                </div>
+                <div class="P-search-text">
+                    <input type="text">
+                </div>
+                <div class="P-search-btn">
+                    <input type="button" value="검색">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- new footer start -->
+    <footer class="new-footer-wrap">
+
+        <!-- footer 1번째 div -->
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-inner">
+                <div class="new-footer-gridLeft">
+                    <a href="">회사소개</a>
+                    <a href="" class="footer-sidebar">공지사항</a>
+                    <a href="" class="footer-sidebar">이용약관</a>
+                    <a href="" class="footer-sidebar">개인정보처리방침</a>
+                    <a href="" class="footer-sidebar">고객의견함</a>
+                    <a href="" class="footer-sidebar">인재채용</a>
+                </div>
+
+                <div class="new-footer-gridRight">
+                    <a href="">
+                        <img src="images/instagram.png" alt="" class="new-footer-img">
+                        <span class="footer-instagram">인스타그램</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/naverblog.png" alt="" class="new-footer-img">
+                        <span class="footer-naverblog">네이버 블로그</span></a>
+                    <a href="" class="footer-sidebar">
+                        <img src="images/kakaochannel.png" alt="" class="new-footer-img">
+                        <span class="footer-kakao">카카오 채널</span></a>
+                    <a href="" class="footer-sidebar" style="padding-right: 0px;">
+                        <img src="images/youtube.png" alt="" class="new-footer-img">
+                        <span class="footer-youtube">유튜브</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-footer-div-wrap">
+            <div class="new-footer-content-wrap">
+                <div>
+                    <h2 class="new-footer-h2">핑 퐁 한 끼</h2>
+                    <dl>
+                        <dt>멤버 </dt>
+                        <dd>: 김재환, 박예슬, 박진석, 주미, 최정욱</dd>
+                        <dt>주제 </dt>
+                        <dd>: 1인 가구를 위한 정식구독 서비스 웹페이지 제작</dd>
+                    </dl>
+
+                    <dl>
+                        <dt>학원 이름 </dt>
+                        <dd>: KH정보교육원</dd>
+                        <dt>학원 주소 </dt>
+                        <dd>: 서울특별시 강남구 테헤란로 14길 6</dd>
+                    </dl>
+                    <p>사이트 내에는 핑퐁한끼에 입점한 개별판매자가 판매하는 상품이 포함되어 있습니다.
+                        <br>
+                        해당 상품의 경우 핑퐁한끼는 통신판매중개자로서 판매 당사자가 아니며, 상품정보 및 거래 등에 대한 책임을 지지 않습니다.
+                    </p>
+                    <p><strong>소비자피해보상보험</strong></p>
+                    <p>고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.</p>
+                </div>
+
+                <div>
+                    <h2 class="new-footer-h2">고객센터</h2>
+                    <p>업무시간 : 09:00 ~ 22:00 (공휴일 휴무)</p>
+                    <p>Email : abcde@gmail.com</p>
+
+                    <button class="footer-marketting-btn" onclick="location.href='MarketingAndSales.html'">마케팅 및
+                        영업문의</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-footer-div-wrap">
+            <div class="footer-copyright-wrap">
+                <p>
+                    Copyright ©
+                    <strong>핑퐁한끼</strong>
+                    .All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <!-- new footer end -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

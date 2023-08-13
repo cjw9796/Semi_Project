@@ -1,0 +1,188 @@
+/* * {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+ */
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  position: relative;
+  padding-top: 150px;
+}
+
+.login-wrap {
+  width: 600px;
+  padding: 77px 100px;
+  border: 2px solid #00c728;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 50px;
+}
+
+.login-img,
+.member-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.member-login p {
+  font-size: 22px;
+  padding: 0 2px;
+  font-weight: 900;
+}
+
+.login-part-wrap {
+  box-sizing: border-box;
+}
+
+input[type=text],
+input[type=password] {
+  height: 55px;
+  width: 100%;
+  border: 1px solid #9d9d9d;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 0 20px;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 19px;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: 2px solid #00c728;
+}
+
+.login-etc-wrap {
+  margin-top: 19px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  vertical-align: middle;
+  line-height: 40px;
+  justify-content: space-between;
+}
+
+.save-id {
+  float: left;
+  font-size: 14px;
+  color: #4b4b4b;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+.save-id input {
+  width: 16px;
+  height: 16px;
+  /* display: none; */
+}
+
+input[type=checkbox] {
+  width: 13px;
+  height: 13px;
+  border: 0;
+  accent-color: white;
+}
+
+.save-id label {
+  display: inline-block;
+  vertical-align: middle;
+  height: 24px;
+  line-height: 18px;
+  /* padding-left: 30px; */
+  font-size: 16px;
+  font-weight: 600;
+  color: #7e7e7e;
+}
+
+.login-etc {
+  float: right;
+  list-style: none;
+}
+
+.login-etc li {
+  float: left;
+  padding: 0px 8px;
+  position: relative;
+}
+
+.login-etc a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #7e7e7e;
+  font-weight: 600;
+}
+
+.login-etc a:hover {
+  color: #00c728;
+}
+
+.login-etc li+li:before {
+  content: "";
+  display: block;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -7px;
+  width: 1px;
+  background-color: #d6d6d6;
+}
+
+.btn-wrap {
+  margin-top: 30px;
+}
+
+.login-button {
+  display: block;
+  height: 55px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #9d9d9d;
+  line-height: 55px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 19px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.kakao-login-btn {
+  display: block;
+  height: 55px;
+  width: 100%;
+  text-align: center;
+  border: 0;
+  line-height: 55px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 19px;
+  background-color: #ffea00;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.login-button:hover {
+  color: white;
+  background-color: #00d975;
+  border: 0;
+}
+
+input[type=checkbox] {
+  width: 22px;
+  height: 22px;
+}
